@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import styles from "../../Styles/GamePage.module.css";
 import { io } from "socket.io-client";
+import API_URL from "../utils/api";
 
 const GamePage = () => {
   const [board, setBoard] = useState(Array(9).fill(null));
@@ -37,12 +38,9 @@ const GamePage = () => {
     const fetchUserData = async () => {
       console.log(opponent);
       try {
-        const response = await axios.get(
-          "http://localhost:5000/api/auth/userdata",
-          {
-            params: { id: opponent }, // Send ID as a query parameter
-          }
-        );
+        const response = await axios.get(`${API_URL}/api/auth/userdata`, {
+          params: { id: opponent }, // Send ID as a query parameter
+        });
 
         setUser(response.data); // Store user data in state
       } catch (error) {
@@ -57,7 +55,7 @@ const GamePage = () => {
   //
 
   useEffect(() => {
-    socketRef.current = io("http://localhost:5000");
+    socketRef.current = io(API_URL);
 
     socketRef.current.emit("joinGame", { userId: storedUserId });
 

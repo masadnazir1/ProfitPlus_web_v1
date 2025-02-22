@@ -12,7 +12,7 @@ const BottomTabs = () => {
         to="/"
         className={({ isActive }) => (isActive ? styles.activeTab : styles.tab)}
       >
-        <img src={homeIcon} alt="Home" />
+        <img src={homeIcon} alt="Home" className={styles.Icon} />
         <span>Home</span>
       </NavLink>
 
@@ -20,7 +20,11 @@ const BottomTabs = () => {
         to="/notifications"
         className={({ isActive }) => (isActive ? styles.activeTab : styles.tab)}
       >
-        <img src={notificationIcon} alt="Notifications" />
+        <img
+          src={notificationIcon}
+          alt="Notifications"
+          className={styles.Icon}
+        />
         <span>Notifications</span>
       </NavLink>
 
@@ -28,7 +32,7 @@ const BottomTabs = () => {
         to="/profile"
         className={({ isActive }) => (isActive ? styles.activeTab : styles.tab)}
       >
-        <img src={profileIcon} alt="Profile" />
+        <img src={profileIcon} alt="Profile" className={styles.Icon} />
         <span>Profile</span>
       </NavLink>
     </nav>

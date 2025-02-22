@@ -1,0 +1,93 @@
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+}
+
+.ProfileDetails {
+  display: flex;
+  width: 90%;
+  background-color: #fff;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  gap: 10%;
+  box-shadow: -1px 1.5px 5px #00000036;
+}
+
+.picture {
+  border-radius: 1000px;
+  border: 0.1px solid;
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  place-content: center;
+}
+
+.Left {
+  display: flex;
+  place-content: center;
+}
+.Right {
+  display: flex;
+  place-content: center;
+  flex-direction: column;
+}
+
+.middleRight {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  place-content: center;
+}
+
+.UserName {
+  width: 100%;
+}
+
+.UserEmail {
+  width: 100%;
+  margin-top: -10px;
+}
+.transections {
+  display: flex;
+  width: 95%;
+  flex-direction: column;
+}
+.resentH {
+  text-align: left;
+}
+.TransectonBox {
+  display: flex;
+  width: 100%;
+  background-color: #fff;
+  margin-top: 10px;
+  border-radius: 5px;
+  gap: 10%;
+  box-shadow: -1px 1.5px 5px #00000036;
+}
+
+.Wallet {
+  display: flex;
+  padding: 10px;
+  width: 10%;
+  place-content: center;
+}
+.WalletIcon {
+  width: 50px;
+  height: 50px;
+}
+.middleDetails {
+  width: 60%;
+  padding: 10px;
+}
+
+.PKR {
+  width: 30%;
+  place-content: center;
+  padding: 10px;
+}

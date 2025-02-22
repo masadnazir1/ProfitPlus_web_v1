@@ -1,0 +1,70 @@
+/* WelcomePage.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #fef9e1;
+  text-align: center;
+}
+
+.logo {
+  width: 200px;
+}
+
+.title {
+  font-size: 2rem;
+  color: #333;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.googleButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4285f4;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.googleButton:hover {
+  background-color: #357ae8;
+}
+
+.googleIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.trustText {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 10px;
+}
+
+.footer {
+  margin-top: 20px;
+  font-size: 0.8rem;
+}
+
+.footer a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"; // For navigation
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
+import API_URL from "../utils/api";
 
 const GoogleAuth = () => {
   const navigate = useNavigate(); // Hook for navigation
@@ -9,7 +10,7 @@ const GoogleAuth = () => {
     console.log("Login Success:", response);
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/Google", {
+      const res = await fetch(`${API_URL}/api/auth/Google`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
