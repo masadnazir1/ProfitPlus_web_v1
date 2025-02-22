@@ -1,0 +1,47 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #000;
+  padding: 5px 10px;
+  font-size: 18px;
+  box-shadow: 2px 2px 5px #00000020;
+}
+
+.welcome {
+  margin: 0;
+}
+
+.logoutBtn {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 500px;
+  transition: background 0.3s ease-in-out;
+  /* box-shadow: 1px 1px 2px #0000003e; */
+}
+
+.LogoutImg {
+  width: 30px;
+}
+.logoutBtn:hover {
+  background-color: #ccc;
+}
+
+@media (max-width: 600px) {
+  .header {
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+  .logoutBtn {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
