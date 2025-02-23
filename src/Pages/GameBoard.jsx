@@ -1,13 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import styles from "../../Styles/GamePage.module.css";
+import WinnerCard from "../model/WinnerModel";
+import LoadingModal from "../model/LoadingModal";
 import { io } from "socket.io-client";
 import API_URL from "../utils/api";
 
 const GamePage = () => {
+  //Below are the use states to hold the data
   const [board, setBoard] = useState(Array(9).fill(null));
-  const [user, setUser] = useState(null);
-
+  const [user, setUser] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [playerSymbol, setPlayerSymbol] = useState(null);
   const [players, setPlayers] = useState({ X: null, O: null });
   const [currentTurn, setCurrentTurn] = useState("X");
@@ -16,11 +19,31 @@ const GamePage = () => {
   const [gameId, setGameId] = useState(null);
   const [winningCells, setWinningCells] = useState([]);
   const [opponent, setOpponent] = useState(null);
-  console.log(winningCells);
+  const [WinnerData, setWinnerData] = useState("");
 
   console.log("Game id", gameId);
   const storedUserId = localStorage.getItem("user_id");
   const socketRef = useRef();
+
+  useEffect(() => {
+    if (winner) {
+      if (winner == localStorage.getItem("user_id")) {
+        const Me = {
+          Name: localStorage.getItem("user_name"),
+          Pic: localStorage.getItem("user_picture"),
+        };
+        setWinnerData(Me);
+        setIsModalOpen(true);
+      } else {
+        const opponentWinner = {
+          Name: user.username,
+          Pic: user.profilepicture,
+        };
+        setWinnerData(opponentWinner);
+        setIsModalOpen(true);
+      }
+    }
+  }, [winner]);
 
   //extract the opponennet and set in the state
   const opponentId = players[playerSymbol === "X" ? "O" : "X"];
@@ -80,6 +103,7 @@ const GamePage = () => {
 
     socketRef.current.on("gameOver", ({ winner, winningCells }) => {
       setWinner(winner);
+
       setWinningCells(winningCells || []);
     });
 
@@ -106,27 +130,55 @@ const GamePage = () => {
   if (waiting) {
     return (
       <div className={styles.GamePage}>
-        <h2>Waiting for another player to join...</h2>
+        <LoadingModal isOpen={waiting} />
       </div>
     );
   }
 
   return (
     <div className={styles.GamePage}>
-      {winner ? (
-        <h1>Winner: {winner}</h1>
-      ) : (
-        <h2>Current Turn: {currentTurn}</h2>
-      )}
-      <p>
-        You are playing as: <strong>{playerSymbol}</strong>
-      </p>
+      <section className={styles.YouAre}>
+        <p>
+          You are playing as: <strong>{playerSymbol}</strong>
+        </p>
+      </section>
+      {/* Section to display the player detsils  */}
+      <section className={styles.PlayerDetailsSection}>
+        <div className={styles.Xplayer}>
+          <div className={styles.Box}>
+            <img src={user.profilepicture} className={styles.PlayerPicture} />
+            <h2>{playerSymbol === "X" ? "O" : "X"}</h2>
+          </div>
+        </div>
+        <div className={styles.vsIconBox}>
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/8431/8431709.png"
+            alt="vs"
+            className={styles.VSIMG}
+          />
+          <div className={styles.turnBox}>
+            {winner ? <h1>Winner</h1> : <h2>Turn: {currentTurn}</h2>}
+          </div>
+        </div>
+        <div className={styles.Oplayer}>
+          <div className={styles.Box}>
+            <img
+              src={localStorage.getItem("user_picture")}
+              className={styles.PlayerPicture}
+            />
+            <h2>{playerSymbol}</h2>
+          </div>
+        </div>
+      </section>
+      {/* above Section to display the player detsils  */}
+
+      {/*
       <p>
         Opponent:{" "}
         <strong>
           {players[playerSymbol === "X" ? "O" : "X"] || "Waiting..."}
         </strong>
-      </p>
+      </p> */}
 
       <section className={styles.gameContainer}>
         {board.map((cell, idx) => (
@@ -139,6 +191,13 @@ const GamePage = () => {
             {cell}
           </button>
         ))}
+        <WinnerCard
+          profilePic={WinnerData.Pic}
+          userName={WinnerData.Name}
+          WinnerName={WinnerData.Name}
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
       </section>
     </div>
   );

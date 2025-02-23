@@ -1,15 +1,24 @@
 .GamePage {
-  height: 85vh;
+  height: 90vh;
   background-color: #ccc;
   padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  /* justify-content: center; */
 }
 
 .gameContainer {
+  background-color: #a27b5c;
   display: grid;
   grid-template-columns: repeat(3, 100px);
   gap: 5px;
   margin: 20px auto;
-  width: max-content;
+  width: 80%;
+  padding: 10px;
+  align-content: center;
+  justify-content: center;
+  border-radius: 10px;
 }
 
 .gameBox {
@@ -20,10 +29,14 @@
   justify-content: center;
   font-size: 24px;
   border-radius: 10px;
-  border: 2px solid #000;
+  border: 2px solid #fff;
   cursor: pointer;
-  background-color: #fff;
+  /* margin: 20px 0px; */
+  background-color: #3f4f44;
   transition: background 0.3s ease-in-out;
+  font-size: 100px;
+  font-weight: bolder;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .gameBox.disabled {
@@ -34,4 +47,92 @@
 .winningCell {
   background-color: #4caf50 !important; /* Green for winning cells */
   color: white;
+}
+
+.PlayerDetailsSection {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.Xplayer {
+  width: 20%;
+  display: flex;
+  place-content: center;
+  flex-direction: column;
+}
+
+.Box {
+  display: flex;
+  place-content: center;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 2px 2px 10px #00000050;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  width: 100%;
+  border-radius: 10px;
+  padding: 5px;
+}
+.vsIconBox {
+  display: flex;
+  place-content: center;
+  flex-direction: column;
+  /* background-color: #ccc; */
+}
+.VSIMG {
+  width: 60px;
+  align-self: center;
+  justify-self: center;
+}
+.Oplayer {
+  width: 20%;
+  display: flex;
+  place-content: center;
+  flex-direction: column;
+}
+
+.PlayerPicture {
+  border-radius: 100px;
+  width: 50px;
+  justify-self: center;
+  align-self: center;
+}
+
+.turnBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.YouAre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20%;
+}
+/* //Media queries */
+@media (min-width: 786px) {
+  .gameContainer {
+    background-color: #a27b5c;
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    gap: 10px;
+  }
+
+  .gameBox {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 400px) {
+  .gameBox {
+    width: 80px;
+    height: 80px;
+  }
+  .gameContainer {
+    width: 100%;
+  }
 }
