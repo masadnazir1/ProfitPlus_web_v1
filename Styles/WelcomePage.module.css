@@ -1,26 +1,71 @@
-/* WelcomePage.module.css */
+/* Apply blur effect to the background */
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #fef9e1;
+  overflow: hidden;
   text-align: center;
+  padding: 20px;
+}
+
+/* Pseudo-element for the blurred background */
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://img.freepik.com/free-photo/2d-graphic-wallpaper-with-colorful-grainy-gradients_23-2151001564.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: blur(40px); /* Adjust blur intensity */
+  z-index: -1;
+}
+
+/* Card for content */
+.card {
+  background: rgba(255, 255, 255, 0); /* Light glass effect */
+  /* backdrop-filter: blur(20px); */
+  padding: 40px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .logo {
-  width: 200px;
+  width: 120px;
+  margin-bottom: 10px;
+  filter: drop-shadow(1px 1px 5px rgba(255, 255, 255, 0.5));
 }
 
 .title {
   font-size: 2rem;
   color: #333;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .subtitle {
-  font-size: 1.2rem;
-  color: #666;
+  font-size: 1.1rem;
+  color: #fff;
   margin-bottom: 20px;
 }
 
@@ -32,14 +77,15 @@
   color: white;
   font-size: 1rem;
   border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
+  border-radius: 50px;
+  padding: 12px 25px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .googleButton:hover {
   background-color: #357ae8;
+  transform: scale(1.05);
 }
 
 .googleIcon {
@@ -50,21 +96,25 @@
 
 .trustText {
   font-size: 0.9rem;
-  color: #777;
-  margin-top: 10px;
+  color: #fff;
+  margin-top: 15px;
+  font-weight: 500;
 }
 
 .footer {
-  margin-top: 20px;
+  margin-top: 15px;
   font-size: 0.8rem;
+  color: #fff;
 }
 
 .footer a {
-  color: #333;
+  color: white;
   text-decoration: none;
-  margin: 0 5px;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 .footer a:hover {
   text-decoration: underline;
+  color: #ffdd57;
 }

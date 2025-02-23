@@ -3,16 +3,21 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 20px;
   text-align: left;
+}
+.containerInner {
+  width: 95%;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .ProfileDetails {
   display: flex;
-  width: 90%;
-  background-color: #fff;
-  padding: 10px;
+  width: 100%;
+  background: linear-gradient(to right, #145c98, #094271);
   margin-top: 10px;
+  color: #fff;
   border-radius: 5px;
   gap: 10%;
   box-shadow: -1px 1.5px 5px #00000036;
@@ -55,7 +60,7 @@
 }
 .transections {
   display: flex;
-  width: 95%;
+  width: 100%;
   flex-direction: column;
 }
 .resentH {
@@ -64,7 +69,7 @@
 .TransectonBox {
   display: flex;
   width: 100%;
-  background-color: #fff;
+  background-color: #0a85ed;
   margin-top: 10px;
   border-radius: 5px;
   gap: 10%;
@@ -80,6 +85,7 @@
 .WalletIcon {
   width: 50px;
   height: 50px;
+  filter: brightness(0) invert(1);
 }
 .middleDetails {
   width: 60%;
@@ -90,4 +96,10 @@
   width: 30%;
   place-content: center;
   padding: 10px;
+}
+
+@media (max-width: 786px) {
+  .middleRight {
+    font-size: 85%;
+  }
 }

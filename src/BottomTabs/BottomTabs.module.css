@@ -3,7 +3,7 @@
   bottom: 0;
   width: 100%;
   padding: 5px;
-  background-color: #fff;
+  background-color: #145c98;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -16,18 +16,18 @@
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  color: #777;
   font-size: 14px;
-
+  color: #fff;
   transition: color 0.3s ease-in-out;
 }
 
 .tab img {
   margin-bottom: 5px;
+  filter: brightness(0) invert(1);
 }
 
 .activeTab {
-  color: #3f4f44;
+  filter: brightness(0) invert(1);
   display: flex;
   flex-direction: column;
   align-items: center;

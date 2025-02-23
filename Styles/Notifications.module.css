@@ -1,0 +1,25 @@
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 90vh;
+  justify-content: center;
+}
+
+.containerInner {
+  width: 95%;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Icon {
+  width: 100px;
+  align-self: center;
+}
+
+.containerInner p {
+  text-align: center;
+  align-self: center;
+}

@@ -3,10 +3,19 @@
   line-height: 1.5;
   font-weight: 400;
   height: 100vh;
-  background-color: #fef9e1;
+  background-color: #a0dae8;
 }
 
 body {
   margin: 0;
   width: 100%;
+}
+
+/* colors.module.css */
+:root {
+  --primary-color: #07c8f9; /* Blue */
+  --secondary-color: #145c98; /* Green */
+  --background-color: #f4f4f4; /* Light Grey */
+  --text-color: #fff; /* Dark Grey */
+  --accent-color: #094271; /* Red */
 }

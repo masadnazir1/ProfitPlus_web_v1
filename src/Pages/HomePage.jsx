@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "../../Styles/Home.module.css";
 import { useNavigate } from "react-router-dom";
 
@@ -14,10 +14,19 @@ const Home = () => {
   const progressValue = Math.min(Math.max(progress, 0), total); // Ensure progress is within bounds
   const offset = circumference - (progressValue / total) * circumference; // Calculate offset
 
+  //
+  //
+  useEffect(() => {
+    const LogedIn = localStorage.getItem("user_id");
+    if (!LogedIn) {
+      navigate("/login");
+    }
+  }, []);
+
   return (
     <div className={styles.container}>
       <section className={styles.Dashboard}>
-        <h1 className={styles.MyReward}>My Reward</h1>
+        <h1 className={styles.MyReward}>My Rewards!</h1>
         <div className={styles.innerBox}>
           <div className={styles.left}>
             <img

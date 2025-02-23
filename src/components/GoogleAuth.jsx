@@ -22,7 +22,6 @@ const GoogleAuth = () => {
 
       if (data.success) {
         //
-        console.log(data.user.id);
         //
         localStorage.setItem("user_id", data.user.id);
         localStorage.setItem("user_name", data.user.name);
@@ -31,7 +30,7 @@ const GoogleAuth = () => {
         //
 
         //
-        navigate("/dashboard", { state: { user: data.user } });
+        navigate("/");
       } else {
         console.log("Authentication failed:", data.message);
       }

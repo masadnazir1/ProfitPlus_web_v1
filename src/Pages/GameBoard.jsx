@@ -5,22 +5,24 @@ import WinnerCard from "../model/WinnerModel";
 import LoadingModal from "../model/LoadingModal";
 import { io } from "socket.io-client";
 import API_URL from "../utils/api";
+import Draw from "../model/DrawModel";
 
 const GamePage = () => {
   //Below are the use states to hold the data
   const [board, setBoard] = useState(Array(9).fill(null));
   const [user, setUser] = useState("");
+  const [drawmodel, setdrawmodel] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [playerSymbol, setPlayerSymbol] = useState(null);
   const [players, setPlayers] = useState({ X: null, O: null });
   const [currentTurn, setCurrentTurn] = useState("X");
-  const [winner, setWinner] = useState(null);
+  const [winner, setWinner] = useState("");
   const [waiting, setWaiting] = useState(true);
   const [gameId, setGameId] = useState(null);
   const [winningCells, setWinningCells] = useState([]);
   const [opponent, setOpponent] = useState(null);
   const [WinnerData, setWinnerData] = useState("");
-
+  console.log(winner);
   const storedUserId = localStorage.getItem("user_id");
   const socketRef = useRef();
 
@@ -102,7 +104,9 @@ const GamePage = () => {
 
     socketRef.current.on("gameOver", ({ winner, winningCells }) => {
       setWinner(winner);
-
+      if (winner === null) {
+        setdrawmodel(true);
+      }
       setWinningCells(winningCells || []);
     });
 
@@ -156,7 +160,7 @@ const GamePage = () => {
             className={styles.VSIMG}
           />
           <div className={styles.turnBox}>
-            {winner ? <h1>Winner</h1> : <h2>Turn: {currentTurn}</h2>}
+            <h2>{winner === null ? "Draw" : `Turn: ${currentTurn}`}</h2>
           </div>
         </div>
         <div className={styles.Oplayer}>
@@ -197,6 +201,7 @@ const GamePage = () => {
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
         />
+        <Draw isOpen={drawmodel} />
       </section>
     </div>
   );

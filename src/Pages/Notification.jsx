@@ -1,7 +1,16 @@
+import styles from "../../Styles/Notifications.module.css";
+
 const Notifications = () => {
   return (
-    <div>
-      <h1>Notifications Screen</h1>
+    <div className={styles.container}>
+      <section className={styles.containerInner}>
+        <img
+          src="https://cdn-icons-png.flaticon.com/128/9221/9221485.png"
+          alt=""
+          className={styles.Icon}
+        />
+        <p>You have no Notifications</p>
+      </section>
     </div>
   );
 };
