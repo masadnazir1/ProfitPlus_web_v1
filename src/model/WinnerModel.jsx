@@ -13,14 +13,43 @@ const WinnerCard = ({ profilePic, userName, WinnerName, isOpen, onClose }) => {
         <div className={styles.profileSection}>
           <div className={styles.profilePicContainer}>
             <img src={profilePic} alt="Profile" className={styles.profilePic} />
-            <div className={styles.crown}>👑</div>
+            <div className={styles.crown}>
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/2460/2460529.png"
+                alt=""
+                className={styles.crownPic}
+              />
+            </div>
           </div>
-          <p className={styles.userName}>{userName}</p>
+          {/* <p className={styles.userName}>{userName}</p> */}
+          <div className={styles.details}>
+            <h2 className={styles.congrats}>Congratulations!</h2>
+            <h2 className={styles.congrats}>TO</h2>
+            <h2 className={styles.congratsName}>{WinnerName}</h2>
+          </div>
         </div>
         <div className={styles.congratulationsSection}>
-          <div className={styles.stars}>⭐ ⭐ ⭐</div>
-          <h2>Congratulations!</h2>
-          <p>{WinnerName} Won the Game!</p>
+          <div className={styles.stars}>
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/7656/7656139.png"
+              alt=""
+              className={styles.bigstar}
+            />
+          </div>
+          <div className={styles.stars}>
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/7656/7656139.png"
+              alt=""
+              className={styles.littlestars}
+            />
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/7656/7656139.png"
+              alt=""
+              className={styles.littlestars}
+            />
+          </div>
+
+          <p className={styles.WinnerName}>{WinnerName} Won the Game!</p>
         </div>
 
         <button

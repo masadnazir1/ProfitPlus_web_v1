@@ -19,6 +19,10 @@ const Profile = () => {
             </div>
           </div>
         </section>
+        <section className={styles.walletActions}>
+          <button className={styles.WithdrawBtn}>Withdraw</button>
+          <button className={styles.InvestBtn}>Invest</button>
+        </section>
         <section className={styles.transections}>
           <strong className={styles.resentH}>Recent Transactions</strong>
 

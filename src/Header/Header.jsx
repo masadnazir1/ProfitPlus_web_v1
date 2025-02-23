@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Header = () => {
   const navigate = useNavigate();
   const handleDelete = () => {
-    if (window.confirm("Are you sure you want to delete this item?")) {
+    if (window.confirm("Are you sure you want to Logout?")) {
       localStorage.removeItem("user_id"); // Replace with your key
       navigate("/login");
       // alert("Item removed from local storage!");

@@ -103,3 +103,42 @@
     font-size: 85%;
   }
 }
+
+.walletActions {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.WithdrawBtn {
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+  cursor: pointer;
+  padding: 15px;
+  background: linear-gradient(to right, #2789d8, #570c94, #2789d8);
+}
+
+.InvestBtn {
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  padding: 15px;
+  background: linear-gradient(to right, #2789d8, #570c94, #2789d8);
+}
+
+.InvestBtn:hover {
+  background: linear-gradient(to right, #15578c, #390861, #11456f);
+}
+
+.WithdrawBtn:hover {
+  background: linear-gradient(to right, #15578c, #390861, #11456f);
+}

@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import styles from "../../Styles/Home.module.css";
 import { useNavigate } from "react-router-dom";
+import getUserScore from "../utils/getUserScore";
 
 const Home = () => {
   //init thge useNavigate
   const navigate = useNavigate();
-  const [points, setPoints] = useState(3000);
-  const [progress, setProgress] = useState(60); // Initial progress value
-  const total = 100; // Maximum progress value
+  const [loading, setLoading] = useState(false);
+  const [progress, setProgress] = useState(); // Initial progress value
+  const total = 3000; // Maximum progress value
   const radius = 50; // Circle radius
   const strokeWidth = 10; // Thickness of the stroke
   const circumference = 2 * Math.PI * radius; // Circumference of the circle
@@ -15,6 +16,36 @@ const Home = () => {
   const offset = circumference - (progressValue / total) * circumference; // Calculate offset
 
   //
+
+  //Handlers
+  const userId = localStorage.getItem("user_id");
+
+  useEffect(() => {
+    console.log(userId);
+    if (!userId) return;
+    if (localStorage.getItem("score") > 0) {
+      setProgress(localStorage.getItem("score"));
+      return;
+    }
+
+    const fetchScore = async () => {
+      setLoading(true);
+      try {
+        const data = await getUserScore(userId);
+        localStorage.setItem("score", data.wins);
+        setLoading(false);
+        setProgress(data.wins);
+      } catch (err) {
+        setLoading(false);
+        console.error(err);
+      } finally {
+        setLoading(false);
+        console.info("data fetched");
+      }
+    };
+    fetchScore();
+  }, [userId]);
+
   //
   useEffect(() => {
     const LogedIn = localStorage.getItem("user_id");
@@ -61,9 +92,14 @@ const Home = () => {
             </svg>
           </div>
           <div className={styles.Right}>
-            <strong className={styles.points}>
-              {`${progress} / ${total}`}pts
-            </strong>
+            {loading ? (
+              <p>Loading...</p>
+            ) : (
+              <strong className={styles.points}>
+                {`${progress} / ${total}`}pts
+              </strong>
+            )}
+
             <p className={styles.note}>Minimum withdrawal amount is 5000 pts</p>
           </div>
         </div>

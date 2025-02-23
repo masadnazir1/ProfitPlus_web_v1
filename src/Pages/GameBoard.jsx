@@ -175,14 +175,6 @@ const GamePage = () => {
       </section>
       {/* above Section to display the player detsils  */}
 
-      {/*
-      <p>
-        Opponent:{" "}
-        <strong>
-          {players[playerSymbol === "X" ? "O" : "X"] || "Waiting..."}
-        </strong>
-      </p> */}
-
       <section className={styles.gameContainer}>
         {board.map((cell, idx) => (
           <button

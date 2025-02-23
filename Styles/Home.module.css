@@ -29,6 +29,7 @@
   font-weight: bold;
   height: 10px;
   margin-left: 5px;
+  margin-top: 0px;
 }
 .points {
   color: #fff;
@@ -37,6 +38,7 @@
 }
 .note {
   color: #fff;
+  font-size: 10px;
 }
 
 .text {
@@ -116,7 +118,10 @@
   width: 120px;
   font-weight: bolder;
   color: #fff;
-  background: linear-gradient(to right, #145c98, #094271);
+  background: linear-gradient(to right, #2789d8, #570c94, #2789d8);
+}
+.PlayGame:hover {
+  background: linear-gradient(to right, #15578c, #390861, #11456f);
 }
 
 .PlayText {

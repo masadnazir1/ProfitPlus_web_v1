@@ -13,7 +13,10 @@ const Draw = ({ isOpen }) => {
         <h2 className={styles.waitingTextDraw}>
           Stalemate! Even the game is confused. 😆
         </h2>
-        <button className={styles.Draw} onClick={() => navigate("/")}>
+        <button
+          className={styles.Draw}
+          onClick={() => window.location.reload()}
+        >
           Return Home
         </button>
       </div>
