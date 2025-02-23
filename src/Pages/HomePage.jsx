@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import styles from "../../Styles/Home.module.css";
 import { useNavigate } from "react-router-dom";
 import getUserScore from "../utils/getUserScore";
+import InterstitialAd from "../model/InterstitialAd";
 
 const Home = () => {
   //init thge useNavigate
   const navigate = useNavigate();
+  const [isAdOpen, setIsAdOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [progress, setProgress] = useState(); // Initial progress value
   const total = 3000; // Maximum progress value
@@ -120,7 +122,29 @@ const Home = () => {
             </button>
           </div>
         </div>
+        <div className={styles.gameRowBox}>
+          <div className={styles.Left}>
+            {" "}
+            <strong className={styles.PlayText}>
+              Watch ad to earn the points
+            </strong>
+          </div>
+          <div className={styles.RightBox}>
+            <button
+              className={styles.PlayGame}
+              onClick={() => setIsAdOpen(true)}
+            >
+              Watch
+            </button>
+          </div>
+        </div>
       </section>
+
+      <InterstitialAd
+        adUrl="https://efooravirarsow.com/4/8947106"
+        isOpen={isAdOpen}
+        onClose={() => setIsAdOpen(false)}
+      />
     </div>
   );
 };
