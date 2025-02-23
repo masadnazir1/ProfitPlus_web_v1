@@ -21,7 +21,6 @@ const GamePage = () => {
   const [opponent, setOpponent] = useState(null);
   const [WinnerData, setWinnerData] = useState("");
 
-  console.log("Game id", gameId);
   const storedUserId = localStorage.getItem("user_id");
   const socketRef = useRef();
 

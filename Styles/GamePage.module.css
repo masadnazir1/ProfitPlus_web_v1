@@ -5,11 +5,11 @@
   display: flex;
   flex-direction: column;
   align-content: center;
-  /* justify-content: center; */
+  justify-content: start;
 }
 
 .gameContainer {
-  background-color: #a27b5c;
+  /* background-color: #a27b5c; */
   display: grid;
   grid-template-columns: repeat(3, 100px);
   gap: 5px;
@@ -115,7 +115,7 @@
 /* //Media queries */
 @media (min-width: 786px) {
   .gameContainer {
-    background-color: #a27b5c;
+    /* background-color: #a27b5c; */
     display: grid;
     grid-template-columns: repeat(3, 200px);
     gap: 10px;

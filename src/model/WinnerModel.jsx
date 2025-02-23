@@ -22,6 +22,13 @@ const WinnerCard = ({ profilePic, userName, WinnerName, isOpen, onClose }) => {
           <h2>Congratulations!</h2>
           <p>{WinnerName} Won the Game!</p>
         </div>
+
+        <button
+          onClick={() => window.location.reload()}
+          className={styles.PlayAgian}
+        >
+          Play again
+        </button>
       </div>
     </div>
   );
