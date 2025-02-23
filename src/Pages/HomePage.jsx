@@ -23,10 +23,10 @@ const Home = () => {
   useEffect(() => {
     console.log(userId);
     if (!userId) return;
-    if (localStorage.getItem("score") > 0) {
-      setProgress(localStorage.getItem("score"));
-      return;
-    }
+    // if (localStorage.getItem("score") > 0) {
+    //   setProgress(localStorage.getItem("score"));
+    //   return;
+    // }
 
     const fetchScore = async () => {
       setLoading(true);
