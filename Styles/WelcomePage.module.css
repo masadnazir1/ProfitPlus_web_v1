@@ -118,3 +118,12 @@
   text-decoration: underline;
   color: #ffdd57;
 }
+
+.GoogleAuthLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 40px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}

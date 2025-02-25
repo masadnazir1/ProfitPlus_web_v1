@@ -19,7 +19,10 @@ const Header = () => {
 
       <button className={styles.logoutBtn} onClick={handleDelete}>
         <img
-          src={localStorage.getItem("user_picture")}
+          src={
+            localStorage.getItem("user_picture") ||
+            "https://cdn-icons-png.flaticon.com/128/64/64572.png"
+          }
           alt="logout"
           className={styles.LogoutImg}
         />

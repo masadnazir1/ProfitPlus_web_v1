@@ -13,6 +13,7 @@
 .adContainer {
   width: 100%;
   height: 100vh;
+  flex-direction: column;
   background: #fff;
   display: flex;
   align-items: center;
@@ -52,4 +53,15 @@
   color: white;
   cursor: pointer;
   border-radius: 5px;
+}
+
+.timer {
+  background-color: #145c98;
+  position: fixed;
+  font-size: xx-large;
+  top: 0;
+  width: 100%;
+  font-weight: bold;
+  color: white;
+  padding: 15px;
 }

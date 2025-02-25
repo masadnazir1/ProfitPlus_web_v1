@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import styles from "../../Styles/Home.module.css";
 import { useNavigate } from "react-router-dom";
-import getUserScore from "../utils/getUserScore";
+import GETPOINTS from "../utils/getUserPoints";
 import InterstitialAd from "../model/InterstitialAd";
+import IframeAd from "../components/IframeAd";
 
 const Home = () => {
   //init thge useNavigate
@@ -25,18 +26,14 @@ const Home = () => {
   useEffect(() => {
     console.log(userId);
     if (!userId) return;
-    // if (localStorage.getItem("score") > 0) {
-    //   setProgress(localStorage.getItem("score"));
-    //   return;
-    // }
 
     const fetchScore = async () => {
       setLoading(true);
       try {
-        const data = await getUserScore(userId);
-        localStorage.setItem("score", data.wins);
+        const data = await GETPOINTS(userId);
+        localStorage.setItem("score", data.balance);
         setLoading(false);
-        setProgress(data.wins);
+        setProgress(data.balance);
       } catch (err) {
         setLoading(false);
         console.error(err);
@@ -140,8 +137,12 @@ const Home = () => {
         </div>
       </section>
 
+      <section className={styles.IframeAd}>
+        <IframeAd />
+      </section>
+
       <InterstitialAd
-        adUrl="https://efooravirarsow.com/4/8947106"
+        adUrl="https://www.galaxydev.pk/"
         isOpen={isAdOpen}
         onClose={() => setIsAdOpen(false)}
       />

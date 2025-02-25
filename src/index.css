@@ -19,3 +19,33 @@ body {
   --text-color: #fff; /* Dark Grey */
   --accent-color: #094271; /* Red */
 }
+/* Google login sttyles */
+.S9gUrf-YoZ4jf {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+}
+.nsm7Bb-HzV7m-LgbsSe {
+  border-radius: 100px !important;
+  padding: 10px !important;
+  border: 1px solid #5990ff !important;
+  box-sizing: content-box;
+  background-color: #094271 !important;
+  &:hover {
+    background-color: #ffffff !important;
+    border: 1px solid #000 !important;
+  }
+}
+
+.nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb {
+  /* padding: 10px !important; */
+}
+.nsm7Bb-HzV7m-LgbsSe {
+  color: #fff !important;
+  padding: 30px !important;
+  &:hover {
+    color: #000 !important;
+  }
+}
