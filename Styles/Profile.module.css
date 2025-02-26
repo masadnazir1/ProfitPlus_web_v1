@@ -63,7 +63,7 @@
 .transections {
   display: flex;
   width: 100%;
-  margin-bottom: 20px !important;
+  padding-bottom: 90px;
   flex-direction: column;
 }
 .resentH {
@@ -72,7 +72,7 @@
 .TransectonBox {
   display: flex;
   width: 100%;
-  background-color: #0a85ed;
+  background-color: #045ea8;
   margin-top: 10px;
   border-radius: 5px;
   gap: 10%;
@@ -86,20 +86,31 @@
   place-content: center;
 }
 .WalletIcon {
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   filter: brightness(0) invert(1);
 }
 .middleDetails {
   width: 60%;
   padding: 10px;
+  color: #fff;
 }
 
 .PKR {
   width: 30%;
-  place-content: center;
-  padding: 10px;
+  font-weight: bold;
+  padding: 1px;
   text-align: right;
+  color: yellow;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.amount {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  align-self: center;
 }
 
 @media (max-width: 786px) {
@@ -123,7 +134,7 @@
   font-weight: bold;
   width: 100%;
   cursor: pointer;
-  padding: 15px;
+  padding: 10px;
   background: linear-gradient(to right, #2789d8, #570c94, #2789d8);
 }
 
@@ -135,7 +146,7 @@
   border: none;
   width: 100%;
   cursor: pointer;
-  padding: 15px;
+  padding: 10px;
   background: linear-gradient(to right, #2789d8, #570c94, #2789d8);
 }
 

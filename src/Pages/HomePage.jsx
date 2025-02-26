@@ -17,6 +17,7 @@ const Home = () => {
   const circumference = 2 * Math.PI * radius; // Circumference of the circle
   const progressValue = Math.min(Math.max(progress, 0), total); // Ensure progress is within bounds
   const offset = circumference - (progressValue / total) * circumference; // Calculate offset
+  const [refresh, setRefresh] = useState(false);
 
   //
 
@@ -24,6 +25,8 @@ const Home = () => {
   const userId = localStorage.getItem("user_id");
 
   useEffect(() => {
+    // refresh ? setRefresh(false) : setRefresh(true);
+
     console.log(userId);
     if (!userId) return;
 

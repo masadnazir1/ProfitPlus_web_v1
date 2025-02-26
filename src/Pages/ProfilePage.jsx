@@ -87,7 +87,7 @@ const Profile = () => {
 
               {/* Amount in PKR */}
               <div className={styles.PKR}>
-                <strong>
+                <strong className={styles.amount}>
                   {txn.type === "earn" ? "+" : "-"} {txn.amount} PKR
                 </strong>
               </div>

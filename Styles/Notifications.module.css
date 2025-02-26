@@ -4,14 +4,14 @@
   align-items: center;
   flex-direction: column;
   height: 90vh;
-  justify-content: center;
 }
 
 .containerInner {
   width: 95%;
-  gap: 20px;
+  gap: 10px;
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
 }
 
 .Icon {
@@ -22,4 +22,19 @@
 .containerInner p {
   text-align: center;
   align-self: center;
+}
+
+.IconNotification {
+  width: 50px;
+  align-self: center;
+}
+
+.Notification {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: left;
+  width: 100%;
+  background-color: #f0f0f0;
+  border-radius: 5px;
 }
