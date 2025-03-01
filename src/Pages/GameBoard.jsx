@@ -1,4 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
+import {
+  getRandomDummyImage,
+  getRandomDummyName,
+} from "../utils/DummyPictures";
 import axios from "axios";
 import styles from "../../Styles/GamePage.module.css";
 import WinnerCard from "../model/WinnerModel";
@@ -22,10 +26,14 @@ const GamePage = () => {
   const [winningCells, setWinningCells] = useState([]);
   const [opponent, setOpponent] = useState(null);
   const [WinnerData, setWinnerData] = useState("");
-  console.log(winner);
   const storedUserId = localStorage.getItem("user_id");
+  const [dummyUser, setDummyUser] = useState("");
+  const [dummyUserName, setDummyUserName] = useState("");
+  console.log("dummy username", dummyUserName);
+  //
   const socketRef = useRef();
 
+  //
   useEffect(() => {
     if (winner) {
       if (winner == localStorage.getItem("user_id")) {
@@ -59,14 +67,21 @@ const GamePage = () => {
   //get the user picture and name to display
   useEffect(() => {
     if (!opponent) return; // Only fetch if opponentId is available
+    //
+    if (opponent[2] === "T") {
+      setDummyUser(getRandomDummyImage());
+      setDummyUserName(getRandomDummyName());
+      return;
+    }
+    //
     const fetchUserData = async () => {
-      console.log(opponent);
       try {
         const response = await axios.get(`${API_URL}/api/auth/userdata`, {
           params: { id: opponent }, // Send ID as a query parameter
         });
 
         setUser(response.data); // Store user data in state
+        console.log(response.data);
       } catch (error) {
         console.error("Error fetching user data:", error);
       }
@@ -142,6 +157,8 @@ const GamePage = () => {
     <div className={styles.GamePage}>
       <section className={styles.YouAre}>
         <p>
+          You are playing With: <strong>{dummyUserName}</strong>
+          <br></br>
           You are playing as: <strong>{playerSymbol}</strong>
         </p>
       </section>
@@ -149,7 +166,10 @@ const GamePage = () => {
       <section className={styles.PlayerDetailsSection}>
         <div className={styles.Xplayer}>
           <div className={styles.Box}>
-            <img src={user.profilepicture} className={styles.PlayerPicture} />
+            <img
+              src={user.profilepicture || dummyUser}
+              className={styles.PlayerPicture}
+            />
             <h2>{playerSymbol === "X" ? "O" : "X"}</h2>
           </div>
         </div>
@@ -187,9 +207,9 @@ const GamePage = () => {
           </button>
         ))}
         <WinnerCard
-          profilePic={WinnerData.Pic}
-          userName={WinnerData.Name}
-          WinnerName={WinnerData.Name}
+          profilePic={WinnerData.Pic || dummyUser}
+          userName={WinnerData.Name || dummyUserName}
+          WinnerName={WinnerData.Name || dummyUserName}
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
         />
