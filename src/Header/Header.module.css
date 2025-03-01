@@ -7,8 +7,6 @@
   font-size: 18px;
   box-shadow: 2px 2px 5px #00000063;
   height: 35px;
-  position: sticky;
-  top: 0;
   background-color: #145c98;
   z-index: 100000;
 }
@@ -33,9 +31,11 @@
 }
 
 .LogoutImg {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 100px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 .logoutBtn:hover {
   background-color: #ccc;

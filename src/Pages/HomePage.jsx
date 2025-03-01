@@ -11,13 +11,12 @@ const Home = () => {
   const [isAdOpen, setIsAdOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [progress, setProgress] = useState(); // Initial progress value
-  const total = 3000; // Maximum progress value
+  const total = 300; // Maximum progress value
   const radius = 50; // Circle radius
   const strokeWidth = 10; // Thickness of the stroke
   const circumference = 2 * Math.PI * radius; // Circumference of the circle
   const progressValue = Math.min(Math.max(progress, 0), total); // Ensure progress is within bounds
   const offset = circumference - (progressValue / total) * circumference; // Calculate offset
-  const [refresh, setRefresh] = useState(false);
 
   //
 
@@ -46,7 +45,7 @@ const Home = () => {
       }
     };
     fetchScore();
-  }, [userId]);
+  }, [userId, isAdOpen]);
 
   //
   useEffect(() => {

@@ -1,0 +1,138 @@
+.reelContainer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.innerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  padding: 5px;
+}
+.reelVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px;
+  pointer-events: none;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  position: fixed;
+  right: 10px;
+  bottom: 100px;
+}
+
+.controlButton {
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+  pointer-events: all;
+  transition: transform 0.2s ease-in-out;
+}
+
+.controlButton :hover {
+  background: rgba(169, 166, 166, 0.274);
+  border-radius: 100px;
+  padding: 5px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.controlButton img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+}
+
+.controlButton:hover {
+  transform: scale(1.1);
+}
+
+.ReelHandle {
+  width: 100%;
+  display: flex;
+
+  justify-content: space-around;
+}
+.nextButton {
+  background-color: aliceblue;
+  position: absolute;
+  bottom: 100px;
+  right: 10%;
+  padding: 5px 20px;
+  border-radius: 1000px;
+  border: none;
+  cursor: pointer;
+  top: 50%;
+  bottom: 0;
+  right: 0;
+  height: 50px;
+  box-shadow: 1px 1px 100px #ffffff;
+}
+.NextIMG {
+  width: 30px;
+  height: 30px;
+}
+
+.PrevButton {
+  background-color: aliceblue;
+  position: absolute;
+  bottom: 100px;
+  z-index: 1000;
+  left: 10%;
+  padding: 5px 20px;
+  border-radius: 1000px;
+  border: none;
+  cursor: pointer;
+  top: 50%;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  box-shadow: 1px 1px 100px #ffffff;
+}
+
+.handlePrevImg {
+  width: 30px;
+  height: 30px;
+  rotate: 180deg;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  border-radius: 8px;
+}

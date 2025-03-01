@@ -1,16 +1,26 @@
 import styles from "../../Styles/Profile.module.css";
 import React, { useEffect, useState } from "react";
 import API_URL from "../utils/api";
+import { useNavigate } from "react-router-dom";
+
 import axios from "axios";
 
 const Profile = () => {
   //usestates
+  const navigate = useNavigate();
   const [transactions, setTransactions] = useState([]);
   const UserName = localStorage.getItem("user_name");
   const ProfilePicture = localStorage.getItem("user_picture");
   const UserEmail = localStorage.getItem("user_email");
   //
-  console.log(transactions);
+
+  const HandleLogout = () => {
+    if (window.confirm("Are you sure you want to Logout?")) {
+      localStorage.removeItem("user_id"); // Replace with your key
+      navigate("/login");
+      // alert("Item removed from local storage!");
+    }
+  };
   //
   //hanlders and useeffects
   useEffect(() => {
@@ -55,7 +65,9 @@ const Profile = () => {
         </section>
         <section className={styles.walletActions}>
           <button className={styles.WithdrawBtn}>Withdraw</button>
-          <button className={styles.InvestBtn}>Invest</button>
+          <button className={styles.InvestBtn} onClick={HandleLogout}>
+            Logout
+          </button>
         </section>
         <section className={styles.transections}>
           <strong className={styles.resentH}>Recent Transactions</strong>

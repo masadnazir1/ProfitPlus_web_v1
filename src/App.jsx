@@ -13,6 +13,7 @@ import Header from "./Header/Header";
 import GamePage from "./Pages/GameBoard";
 import Dashboard from "./Pages/Dashboard";
 import WelcomePage from "./Pages/LoginPage";
+import ReelAds from "./Pages/AdsReelPage";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/login" element={<WelcomePage />} />
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/ReelsAds" element={<ReelAds />} />
           <Route path="/game" element={<GamePage />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
@@ -45,7 +47,7 @@ const ConditionalBottomTabs = () => {
 
 const ConditionalHeader = () => {
   const location = useLocation();
-  const hideTabsOnRoutes = ["/login", "/welcome"]; // Add more routes if needed
+  const hideTabsOnRoutes = ["/login", "/welcome", "/ReelsAds"]; // Add more routes if needed
 
   return !hideTabsOnRoutes.includes(location.pathname) ? <Header /> : null;
 };

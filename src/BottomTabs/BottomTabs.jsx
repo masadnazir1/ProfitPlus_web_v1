@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./BottomTabs.module.css";
 import homeIcon from "../assets/home.png";
-import notificationIcon from "../assets/Bell.png";
+import Reel from "../assets/Reel.png";
 import profileIcon from "../assets/user.png";
 
 const BottomTabs = () => {
@@ -17,22 +17,24 @@ const BottomTabs = () => {
       </NavLink>
 
       <NavLink
-        to="/notifications"
+        to="/ReelsAds"
         className={({ isActive }) => (isActive ? styles.activeTab : styles.tab)}
       >
-        <img
-          src={notificationIcon}
-          alt="Notifications"
-          className={styles.Icon}
-        />
-        <span>Notifications</span>
+        <img src={Reel} alt="ReelsAds" className={styles.Icon} />
+        <span>Ads Reels</span>
       </NavLink>
 
       <NavLink
         to="/profile"
-        className={({ isActive }) => (isActive ? styles.activeTab : styles.tab)}
+        className={({ isActive }) =>
+          isActive ? styles.activeTabProfile : styles.tabProfile
+        }
       >
-        <img src={profileIcon} alt="Profile" className={styles.Icon} />
+        <img
+          src={localStorage.getItem("user_picture") || profileIcon}
+          alt="Profile"
+          className={styles.IconAsProfile}
+        />
         <span>Profile</span>
       </NavLink>
     </nav>

@@ -42,6 +42,33 @@
   height: 30px;
 }
 
+.IconAsProfile {
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+}
+
+.tabProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  font-size: 14px;
+  color: #fff;
+  transition: color 0.3s ease-in-out;
+}
+
+.tabProfile img {
+  margin-bottom: 5px;
+}
+
+.activeTabProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
 @media (max-width: 768px) {
   .tab {
     font-size: 12px;
