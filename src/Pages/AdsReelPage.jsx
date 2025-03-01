@@ -39,7 +39,7 @@ const ReelAds = () => {
     setLoading(true); // Show loader when index changes
     const interval = setTimeout(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % reels.length);
-    }, 5000); // Change reel after 5 seconds
+    }, 2000); // Change reel after 5 seconds
     setLoading(false); // Show loader when index changes
     return () => clearTimeout(interval);
   }, [currentIndex]);

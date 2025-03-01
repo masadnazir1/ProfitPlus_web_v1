@@ -4,7 +4,10 @@ import { useNavigate } from "react-router-dom";
 import GETPOINTS from "../utils/getUserPoints";
 import InterstitialAd from "../model/InterstitialAd";
 import IframeAd from "../components/IframeAd";
+import LuckyDraw from "../model/LuckyDraw";
 
+//
+//
 const Home = () => {
   //init thge useNavigate
   const navigate = useNavigate();
@@ -137,6 +140,10 @@ const Home = () => {
             </button>
           </div>
         </div>
+      </section>
+
+      <section className={styles.LuckyDraw}>
+        <LuckyDraw />
       </section>
 
       <section className={styles.IframeAd}>

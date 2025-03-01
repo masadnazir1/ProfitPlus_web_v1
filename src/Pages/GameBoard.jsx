@@ -35,6 +35,9 @@ const GamePage = () => {
 
   //
   useEffect(() => {
+    //
+    document.title = "GameBoard ProfitPlus";
+    //
     if (winner) {
       if (winner == localStorage.getItem("user_id")) {
         const Me = {

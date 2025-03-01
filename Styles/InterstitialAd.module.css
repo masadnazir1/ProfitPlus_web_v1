@@ -61,7 +61,8 @@
   font-size: xx-large;
   top: 0;
   width: 100%;
+  text-align: center;
   font-weight: bold;
   color: white;
-  padding: 15px;
+  padding: 3px;
 }

@@ -1,0 +1,74 @@
+.luckydraw {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+  background-color: #0a85ed;
+  border-radius: 5px;
+  padding: 10px;
+  gap: 10px;
+  text-align: center;
+  color: #fff;
+}
+
+.luckydraw__img {
+  width: 45%;
+  height: 10%;
+  object-fit: cover;
+}
+
+.buttonEnter {
+  cursor: pointer;
+  border: 1px solid #fff;
+  align-self: center;
+  justify-self: center;
+  border-radius: 100px;
+  padding: 15px;
+  width: 50%;
+  font-weight: bolder;
+  color: #fff;
+
+  background: linear-gradient(to right, #2789d8, #570c94, #2789d8);
+  &:hover {
+    background: linear-gradient(to right, #15578c, #390861, #11456f);
+  }
+}
+
+.luckydraw__prizes {
+  position: fixed;
+  width: 100%;
+  height: 150vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #000;
+}
+
+.btnclose {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border: none;
+  align-self: center;
+  justify-self: center;
+  border-radius: 100px;
+  font-size: 20px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  font-weight: bolder;
+  color: #000;
+  background: linear-gradient(to right, #f7f7f7, #e8e8e8, #f7f7f7);
+  &:hover {
+    background: linear-gradient(to right, #e8e8e8, #f7f7f7, #e8e8e8);
+  }
+}
