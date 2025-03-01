@@ -10,6 +10,7 @@
   position: sticky;
   top: 0;
   background-color: #145c98;
+  z-index: 100000;
 }
 
 .welcome {
