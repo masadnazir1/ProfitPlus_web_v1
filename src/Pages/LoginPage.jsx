@@ -1,9 +1,10 @@
-import React from "react";
+import { useState } from "react";
 import GoogleAuth from "../components/GoogleAuth";
 import styles from "../../Styles/WelcomePage.module.css";
 import logo from "../assets/logo.png";
 
 const WelcomePage = () => {
+  const [loading, setLoading] = useState(false);
   return (
     <div className={styles.container}>
       <div className={styles.card}>
@@ -13,7 +14,7 @@ const WelcomePage = () => {
           Watch ads, earn rewards, and cash out instantly. Join now!
         </p>
         <section className={styles.GoogleAuthLogin}>
-          <GoogleAuth />
+          <GoogleAuth setLoading={setLoading} />
         </section>
 
         <p className={styles.trustText}>

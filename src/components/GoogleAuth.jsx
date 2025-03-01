@@ -1,14 +1,16 @@
-import React from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom"; // For navigation
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 import API_URL from "../utils/api";
 
 const GoogleAuth = () => {
   const navigate = useNavigate(); // Hook for navigation
+  const [loading, setLoading] = useState(false);
+  const [authLoading, setAuthLoading] = useState(false);
 
   const handleSuccess = async (response) => {
-    console.log("Login Success:", response);
-
+    setLoading(true); // Show loading in parent
+    setAuthLoading(true); // Show loading in this component
     try {
       const res = await fetch(`${API_URL}/api/auth/Google`, {
         method: "POST",
@@ -36,15 +38,22 @@ const GoogleAuth = () => {
       }
     } catch (error) {
       console.error("Error verifying token:", error);
+    } finally {
+      setLoading(false);
+      setAuthLoading(false);
     }
   };
 
   return (
     <GoogleOAuthProvider clientId="411862526595-a9ugd2nrsaidg8e9rutgo10pu12rcsap.apps.googleusercontent.com">
-      <GoogleLogin
-        onSuccess={handleSuccess}
-        onError={() => console.log("Login Failed")}
-      />
+      {authLoading ? (
+        <p>Loading...</p> // Show loading text (you can use a spinner here)
+      ) : (
+        <GoogleLogin
+          onSuccess={handleSuccess}
+          onError={() => console.log("Login Failed")}
+        />
+      )}
     </GoogleOAuthProvider>
   );
 };
