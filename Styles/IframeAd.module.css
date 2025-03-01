@@ -1,7 +1,7 @@
 .iframeContainer {
   width: 100%;
   visibility: hidden;
-  height: 400px;
+  height: 10px;
   margin: auto;
   border: 2px solid #ddd;
   border-radius: 1px;
