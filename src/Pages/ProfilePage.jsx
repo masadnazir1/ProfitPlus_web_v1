@@ -64,7 +64,12 @@ const Profile = () => {
           </div>
         </section>
         <section className={styles.walletActions}>
-          <button className={styles.WithdrawBtn}>Withdraw</button>
+          <button
+            className={styles.WithdrawBtn}
+            onClick={() => navigate("/req")}
+          >
+            Withdraw
+          </button>
           <button className={styles.InvestBtn} onClick={HandleLogout}>
             Logout
           </button>

@@ -1,0 +1,55 @@
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: left;
+  height: 100vh;
+  padding-bottom: 20px;
+  justify-content: center;
+}
+.containerInner {
+  width: 95%;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerInner form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 85%;
+}
+.containerInner h2 {
+  text-align: center;
+}
+
+.inputField {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  text-align: left;
+}
+
+.input {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.submitBtn {
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(to right, #2789d8, #570c94, #2789d8);
+  color: white;
+  cursor: pointer;
+  margin-top: 15px;
+}

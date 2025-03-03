@@ -14,6 +14,7 @@ import GamePage from "./Pages/GameBoard";
 import Dashboard from "./Pages/Dashboard";
 import WelcomePage from "./Pages/LoginPage";
 import ReelAds from "./Pages/AdsReelPage";
+import WithdrawalRequest from "./Pages/WithdrawalRequest";
 
 const App = () => {
   return (
@@ -29,6 +30,8 @@ const App = () => {
           <Route path="/ReelsAds" element={<ReelAds />} />
           <Route path="/game" element={<GamePage />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="*" element={<Home />} />
+          <Route path="/req" element={<WithdrawalRequest />} />
         </Routes>
 
         <ConditionalBottomTabs />
