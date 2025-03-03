@@ -13,6 +13,11 @@ const EnterDraw = ({ isOpen, onClose }) => {
         <button className={styles.EnterDraw} onClick={onClose}>
           <img src={Back} alt="" className={styles.EnterDrawIMG} />
         </button>
+        <img
+          src="https://cdn3d.iconscout.com/3d/premium/thumb/coming-soon-3d-sticker-download-in-png-blend-fbx-gltf-file-formats--maintenance-hand-opening-board-pack-miscellaneous-stickers-5686068.png?f=webp"
+          alt=""
+          className={styles.Soon}
+        />
       </div>
     </div>
   );

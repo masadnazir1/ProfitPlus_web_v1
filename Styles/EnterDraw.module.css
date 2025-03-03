@@ -20,6 +20,9 @@
   text-align: center;
   position: relative;
   margin-bottom: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .EnterDraw {
@@ -38,4 +41,8 @@
 .EnterDrawIMG {
   width: 50px;
   height: 50px;
+}
+
+.Soon {
+  width: 70%;
 }
