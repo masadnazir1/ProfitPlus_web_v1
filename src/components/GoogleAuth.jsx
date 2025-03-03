@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"; // For navigation
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
+import Loader from "../components/Loader/Loader";
 import API_URL from "../utils/api";
 
 const GoogleAuth = () => {
@@ -47,7 +48,7 @@ const GoogleAuth = () => {
   return (
     <GoogleOAuthProvider clientId="411862526595-a9ugd2nrsaidg8e9rutgo10pu12rcsap.apps.googleusercontent.com">
       {authLoading ? (
-        <p>Loading...</p> // Show loading text (you can use a spinner here)
+        <Loader /> // Show loading text (you can use a spinner here)
       ) : (
         <GoogleLogin
           onSuccess={handleSuccess}

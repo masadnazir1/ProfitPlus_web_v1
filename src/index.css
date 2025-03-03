@@ -49,3 +49,27 @@ body {
     color: #000 !important;
   }
 }
+
+/* For WebKit-based browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 3px; /* Width of the scrollbar */
+  height: 1px; /* Height of the scrollbar (for horizontal scroll) */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track (background) color */
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5751ff; /* Thumb (the draggable part) color */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Thumb color when hovered */
+}
+
+::-webkit-scrollbar-button {
+  display: none; /* Hide the buttons on the scrollbar */
+}

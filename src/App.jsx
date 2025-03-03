@@ -5,6 +5,7 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
+
 import BottomTabs from "./BottomTabs/BottomTabs";
 import Home from "./Pages/HomePage";
 import Notifications from "./Pages/Notification";
@@ -15,6 +16,8 @@ import Dashboard from "./Pages/Dashboard";
 import WelcomePage from "./Pages/LoginPage";
 import ReelAds from "./Pages/AdsReelPage";
 import WithdrawalRequest from "./Pages/WithdrawalRequest";
+
+//
 
 const App = () => {
   return (
