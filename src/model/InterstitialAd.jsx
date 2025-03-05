@@ -5,19 +5,17 @@ import postPoints from "../utils/postPoints";
 const InterstitialAd = ({ isOpen, onClose }) => {
   const adUrls = [
     "https://roubauteezavoak.net/4/9031398",
-    "https://roubauteezavoak.net/4/9031397",
-    "https://roubauteezavoak.net/4/9031396",
+    "https://www.effectiveratecpm.com/ver7ijkg?key=69c8b0d6deac7863ed5251bd6312c228",
     "https://roubauteezavoak.net/4/9031395",
-    "https://roubauteezavoak.net/4/7194013",
-    "https://roubauteezavoak.net/4/7195957",
-    "https://roubauteezavoak.net/4/8947104",
-    "https://roubauteezavoak.net/4/8947106",
-    "https://roubauteezavoak.net/4/8947108",
-    "https://roubauteezavoak.net/4/9006385",
+    "https://www.effectiveratecpm.com/dc3yy8dsr?key=37ef9831979db51a3c4f885f5ea31b2c",
+    "https://roubauteezavoak.net/4/9031396",
+    "https://www.effectiveratecpm.com/dc3yy8dsr?key=37ef9831979db51a3c4f885f5ea31b2c",
+    "https://roubauteezavoak.net/4/9031397",
+    "https://www.effectiveratecpm.com/dc3yy8dsr?key=37ef9831979db51a3c4f885f5ea31b2c",
   ]; // ✅ Add your ad URLs here
 
-  const totalTime = 60; // Total ad duration in seconds
-  const adDuration = 5; // Time each ad is shown (5s per ad)
+  const totalTime = 30; // Total ad duration in seconds
+  const adDuration = 15; // Time each ad is shown (5s per ad)
 
   const [showAd, setShowAd] = useState(false);
   const [showModal, setShowModal] = useState(false);
