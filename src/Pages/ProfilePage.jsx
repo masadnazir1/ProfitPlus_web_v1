@@ -31,10 +31,10 @@ const Profile = () => {
             "user_id"
           )}`
         );
-        console.log(response.data.transactions);
+
         setTransactions(response.data.transactions);
       } catch (error) {
-        console.log(error);
+        console.error(error);
         {
         }
       }

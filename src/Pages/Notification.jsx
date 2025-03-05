@@ -5,12 +5,11 @@ import GET_NOTIFICATIONS from "../utils/GetNotifications";
 const Notifications = () => {
   const [notifications, setNotifications] = useState([]);
   //
-  console.log("from state", notifications);
   useEffect(() => {
     document.title = "Notifications";
 
     const userId = localStorage.getItem("user_id");
-    console.log(userId);
+
     if (!userId) return;
     const fetchNotifications = async () => {
       try {

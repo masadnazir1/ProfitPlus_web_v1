@@ -14,7 +14,7 @@ const Home = () => {
   const [isAdOpen, setIsAdOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [progress, setProgress] = useState(); // Initial progress value
-  const total = 300; // Maximum progress value
+  const total = 1000; // Maximum progress value
   const radius = 50; // Circle radius
   const strokeWidth = 10; // Thickness of the stroke
   const circumference = 2 * Math.PI * radius; // Circumference of the circle
@@ -29,7 +29,6 @@ const Home = () => {
   useEffect(() => {
     // refresh ? setRefresh(false) : setRefresh(true);
 
-    console.log(userId);
     if (!userId) return;
 
     const fetchScore = async () => {

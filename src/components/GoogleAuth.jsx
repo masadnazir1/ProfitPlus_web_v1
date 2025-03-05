@@ -35,7 +35,6 @@ const GoogleAuth = () => {
         //
         navigate("/");
       } else {
-        console.log("Authentication failed:", data.message);
       }
     } catch (error) {
       console.error("Error verifying token:", error);

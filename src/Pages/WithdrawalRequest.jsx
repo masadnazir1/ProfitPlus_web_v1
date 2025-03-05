@@ -48,7 +48,6 @@ const WithdrawalRequest = () => {
         amount: Rs,
       });
 
-      console.log(response.data);
       if (response.data.success === true) {
         setMessage("Points withdrawn successfully!"); // Success message
       } else {
@@ -81,7 +80,7 @@ const WithdrawalRequest = () => {
           }
         );
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
 
       setMessage(

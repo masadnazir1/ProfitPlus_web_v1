@@ -29,7 +29,6 @@ const InterstitialAd = ({ isOpen, onClose }) => {
   const handleEarnPoints = async () => {
     try {
       const response = await postPoints(userId, points);
-      console.log("Points added successfully:", response);
     } catch (error) {
       console.error("Failed to add points:", error);
     }

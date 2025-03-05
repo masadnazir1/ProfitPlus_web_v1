@@ -29,7 +29,7 @@ const GamePage = () => {
   const storedUserId = localStorage.getItem("user_id");
   const [dummyUser, setDummyUser] = useState("");
   const [dummyUserName, setDummyUserName] = useState("");
-  console.log("dummy username", dummyUserName);
+
   //
   const socketRef = useRef();
 
@@ -84,7 +84,6 @@ const GamePage = () => {
         });
 
         setUser(response.data); // Store user data in state
-        console.log(response.data);
       } catch (error) {
         console.error("Error fetching user data:", error);
       }
