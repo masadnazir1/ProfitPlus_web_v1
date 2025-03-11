@@ -3,20 +3,22 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: black;
 }
 
-.innerContainer {
+.videoWrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 95%;
-  padding: 5px;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
 }
+
+.videoContainer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
 .reelVideo {
   width: 100%;
   height: 100%;
@@ -44,9 +46,9 @@
   flex-direction: column;
   gap: 15px;
   align-items: center;
-  position: fixed;
-  right: 10px;
-  bottom: 100px;
+  position: absolute;
+  right: 45px;
+  bottom: 150px;
 }
 
 .controlButton {
@@ -59,14 +61,6 @@
   transition: transform 0.2s ease-in-out;
 }
 
-.controlButton :hover {
-  background: rgba(169, 166, 166, 0.274);
-  border-radius: 100px;
-  padding: 5px;
-  cursor: pointer;
-  box-sizing: border-box;
-}
-
 .controlButton img {
   width: 30px;
   height: 30px;
@@ -75,55 +69,6 @@
 
 .controlButton:hover {
   transform: scale(1.1);
-}
-
-.ReelHandle {
-  width: 100%;
-  display: flex;
-
-  justify-content: space-around;
-}
-.nextButton {
-  background-color: aliceblue;
-  position: absolute;
-  bottom: 100px;
-  right: 10%;
-  padding: 5px 20px;
-  border-radius: 1000px;
-  border: none;
-  cursor: pointer;
-  top: 50%;
-  bottom: 0;
-  right: 0;
-  height: 50px;
-  box-shadow: 1px 1px 100px #ffffff;
-}
-.NextIMG {
-  width: 30px;
-  height: 30px;
-}
-
-.PrevButton {
-  background-color: aliceblue;
-  position: absolute;
-  bottom: 100px;
-  z-index: 1000;
-  left: 10%;
-  padding: 5px 20px;
-  border-radius: 1000px;
-  border: none;
-  cursor: pointer;
-  top: 50%;
-  bottom: 0;
-  left: 0;
-  height: 50px;
-  box-shadow: 1px 1px 100px #ffffff;
-}
-
-.handlePrevImg {
-  width: 30px;
-  height: 30px;
-  rotate: 180deg;
 }
 
 .loader {

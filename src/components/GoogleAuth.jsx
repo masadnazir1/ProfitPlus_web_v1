@@ -10,6 +10,7 @@ const GoogleAuth = () => {
   const [authLoading, setAuthLoading] = useState(false);
 
   const handleSuccess = async (response) => {
+    console.log(response.credential);
     setLoading(true); // Show loading in parent
     setAuthLoading(true); // Show loading in this component
     try {
